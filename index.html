@@ -244,9 +244,10 @@
       align-items: end; position: relative; z-index: 2; margin-top: auto;
     }
     .official {
-      position: absolute; right: 2mm; bottom: 11mm; width: 36mm;
-      opacity: 0.9; mix-blend-mode: multiply; transform: rotate(-7deg);
-      filter: contrast(1.2) saturate(1.15);
+      position: absolute; right: 2mm; bottom: 11mm; width: 40mm;
+      height: auto;
+      opacity: 1;
+      transform: rotate(-7deg);
       pointer-events: none; z-index: 1;
     }
 
@@ -257,6 +258,12 @@
       .page { box-shadow: none !important; margin: 0; }
       @page { size: A4 portrait; margin: 0; }
       * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      .official {
+        filter: none !important;
+        mix-blend-mode: normal !important;
+        opacity: 1 !important;
+        image-rendering: auto;
+      }
     }
   </style>
 </head>
