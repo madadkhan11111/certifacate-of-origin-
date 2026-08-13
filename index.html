@@ -62,15 +62,73 @@
     .header {
       position: relative;
       background: #fff;
-      padding: 0;
-      overflow: hidden;
+      padding: 3.2mm;
+      display: flex;
     }
-    .header-photo {
+    .header-frame {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: fill;
-      display: block;
+      pointer-events: none;
     }
+    .header-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 2.2mm 2.4mm 1.4mm;
+    }
+    .head-row {
+      width: 100%; display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 4mm; margin-bottom: 1.8mm;
+    }
+    .qr-wrap {
+      flex: 0 0 auto;
+      background: #fff;
+      padding: 1.2mm;
+      border: 0.55pt solid #222;
+    }
+    .qr {
+      display: block;
+      width: 16mm;
+      height: 16mm;
+      object-fit: contain;
+      image-rendering: pixelated;
+      background: #fff;
+    }
+    .qr-caption {
+      display: block;
+      margin-top: 0.8mm;
+      font-size: 5.6pt;
+      font-weight: 600;
+      color: #333;
+      letter-spacing: 0.2px;
+    }
+    .ref-block { text-align: right; }
+    .ref-block .lab { font-size: 7.6pt; font-weight: 600; color: #111; display: block; }
+    .serial {
+      display: block; margin-top: 0.6mm;
+      color: var(--stamp); font-family: "Times New Roman", Times, serif;
+      font-weight: 700; font-size: 14pt; letter-spacing: 0.6px;
+    }
+    .title {
+      font-family: "Libre Baskerville", "Times New Roman", Times, serif;
+      font-weight: 700; font-size: 16.5pt; color: var(--maroon);
+      letter-spacing: 0.6px; line-height: 1; margin-bottom: 1.8mm;
+    }
+    .logo { width: 34mm; height: 34mm; object-fit: contain; margin: 0.4mm 0 1.2mm; }
+    .assoc {
+      font-family: "Libre Baskerville", "Times New Roman", Times, serif;
+      font-weight: 700; font-size: 7.6pt; color: var(--maroon);
+      line-height: 1.22; margin-bottom: 1.5mm;
+    }
+    .contact { font-size: 6.1pt; line-height: 1.4; color: #111; }
 
     .stack { display: grid; grid-template-rows: 1.16fr 1.16fr 0.84fr 0.84fr; gap: 2.1mm; }
     .ibox {
@@ -240,7 +298,37 @@
       <div class="sheet">
         <section class="top">
           <div class="header">
-            <img class="header-photo" src="assets/header-panel.png" alt="Certificate of Origin header" />
+            <svg class="header-frame" viewBox="0 0 640 430" preserveAspectRatio="none" aria-hidden="true">
+              <rect x="2" y="2" width="636" height="426" fill="none" stroke="#111" stroke-width="2"/>
+              <rect x="8" y="8" width="624" height="414" fill="none" stroke="#111" stroke-width="0.8"/>
+              <rect x="13" y="13" width="614" height="404" fill="none" stroke="#111" stroke-width="0.45"/>
+              <rect x="2" y="2" width="14" height="14" fill="none" stroke="#111" stroke-width="1.2"/>
+              <rect x="624" y="2" width="14" height="14" fill="none" stroke="#111" stroke-width="1.2"/>
+              <rect x="2" y="414" width="14" height="14" fill="none" stroke="#111" stroke-width="1.2"/>
+              <rect x="624" y="414" width="14" height="14" fill="none" stroke="#111" stroke-width="1.2"/>
+            </svg>
+            <div class="header-inner">
+            <div class="head-row">
+              <div>
+                <div class="qr-wrap">
+                  <img class="qr" src="assets/qr.png" alt="Scan to verify certificate 0006638" />
+                </div>
+                <span class="qr-caption">Scan to verify</span>
+              </div>
+              <div class="ref-block">
+                <span class="lab">Reference Number:</span>
+                <span class="serial" id="outSerial">№ 0006638</span>
+              </div>
+            </div>
+            <h1 class="title">CERTIFICATE OF ORIGIN</h1>
+              <img class="logo" src="assets/apdiea-monogram.png" alt="APDIEA monogram" />
+            <div class="assoc">ALL PAKISTAN DRY FRUIT IMPORTERS &amp; EXPORTERS ASSOCIATION</div>
+            <div class="contact">
+              Office No. 2, 2nd Floor, National Plaza, Choharmal Road, Corner Jinnah Road, Quetta – Pakistan<br />
+              Ph: +91-81-2838476 / E-mail: info@apdiea.org.pk<br />
+              URL: www.apdiea.org.pk
+            </div>
+            </div>
           </div>
 
           <div class="stack">
