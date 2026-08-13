@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 196" fill="none">
+  <polygon points="110,8 212,180 8,180" stroke="#1b4cb0" stroke-width="2.6" stroke-linejoin="miter"/>
+  <polygon points="110,20 200,172 20,172" stroke="#1b4cb0" stroke-width="1.15" stroke-linejoin="miter"/>
+  <defs>
+    <path id="leftEdge" d="M 42 168 L 104 42"/>
+    <path id="rightEdge" d="M 116 42 L 178 168"/>
+  </defs>
+  <text fill="#1b4cb0" font-family="Arial, Helvetica, sans-serif" font-size="7.2" font-weight="700" letter-spacing="0.6">
+    <textPath href="#leftEdge" startOffset="2">ALL PAKISTAN DRY FRUIT</textPath>
+  </text>
+  <text fill="#1b4cb0" font-family="Arial, Helvetica, sans-serif" font-size="7.2" font-weight="700" letter-spacing="0.5">
+    <textPath href="#rightEdge" startOffset="2">IMPORTERS EXPORTERS</textPath>
+  </text>
+  <text x="110" y="78" text-anchor="middle" fill="#1b4cb0" font-family="Arial, Helvetica, sans-serif" font-size="6.4" font-weight="700">ASSOCIATION (QUETTA)</text>
+  <text x="110" y="102" text-anchor="middle" fill="#1b4cb0" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="1.8">ATTESTED</text>
+  <path d="M72 118 C86 108, 98 128, 112 116 C124 106, 136 124, 150 114" stroke="#1b4cb0" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M80 126 C94 132, 118 132, 140 122" stroke="#1b4cb0" stroke-width="1.2" stroke-linecap="round"/>
+  <text x="110" y="156" text-anchor="middle" fill="#1b4cb0" font-family="Arial, Helvetica, sans-serif" font-size="8.2" font-weight="700" letter-spacing="0.9">SECRETARY GENERAL</text>
+</svg>
