@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
+  <defs>
+    <path id="apdiea-arc" d="M 38 92 Q 120 8 202 92"/>
+  </defs>
+  <text fill="#111" font-family="Times New Roman, Times, serif" font-size="28" font-weight="700" letter-spacing="6">
+    <textPath href="#apdiea-arc" startOffset="50%" text-anchor="middle">APDIEA</textPath>
+  </text>
+  <!-- left wing -->
+  <path d="M118 96
+           C 96 78, 62 74, 34 96
+           C 42 98, 56 90, 70 92
+           C 58 100, 44 112, 32 118
+           C 48 112, 70 102, 90 108
+           C 78 118, 62 132, 50 140
+           C 72 128, 96 114, 112 118"
+        stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- right wing -->
+  <path d="M122 96
+           C 144 78, 178 74, 206 96
+           C 198 98, 184 90, 170 92
+           C 182 100, 196 112, 208 118
+           C 192 112, 170 102, 150 108
+           C 162 118, 178 132, 190 140
+           C 168 128, 144 114, 128 118"
+        stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- crossover -->
+  <path d="M108 102 C 114 92, 126 92, 132 102" stroke="#111" stroke-width="2.4" stroke-linecap="round"/>
+  <!-- central seed / loop -->
+  <path d="M120 108
+           C 108 122, 106 148, 120 172
+           C 134 148, 132 122, 120 108 Z"
+        stroke="#111" stroke-width="2.4" stroke-linejoin="round"/>
+</svg>

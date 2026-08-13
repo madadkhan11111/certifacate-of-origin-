@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificate of Origin — No. 0006638</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --maroon: #8a3218;
+      --ink: #111;
+      --line: #1a1a1a;
+      --grey: #d4d4d4;
+      --stamp: #1540a0;
+      --paper: #fff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      background: #5c5c5c;
+      color: var(--ink);
+      font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
+    }
+    .toolbar {
+      position: sticky; top: 0; z-index: 20;
+      display: flex; justify-content: center; align-items: center; gap: 10px;
+      padding: 10px 12px; background: #222; color: #fff; font-size: 13px;
+    }
+    .toolbar button {
+      border: 0; background: #c9a227; color: #1a1a1a; font-weight: 700;
+      padding: 8px 14px; border-radius: 3px; cursor: pointer;
+    }
+    .toolbar button.ghost { background: #3d3d3d; color: #fff; }
+    .editor {
+      display: none; width: 210mm; max-width: calc(100% - 32px);
+      margin: 14px auto 0; background: #fff; border-radius: 6px; padding: 14px 16px;
+    }
+    .editor h2 { font-size: 15px; }
+    .editor .hint { font-size: 12px; color: #555; margin: 4px 0 10px; }
+    .editor-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px 10px; }
+    .editor label { display: flex; flex-direction: column; gap: 3px; font-size: 11px; font-weight: 700; }
+    .editor label.wide { grid-column: 1 / -1; }
+    .editor input, .editor textarea {
+      font: 13px "Source Sans 3", Arial, sans-serif; padding: 6px 8px;
+      border: 1px solid #ccc; border-radius: 3px; font-weight: 400;
+    }
+    .editor textarea { min-height: 48px; }
+
+    .sheet-wrap { padding: 18px 12px 40px; display: flex; justify-content: center; }
+    .page {
+      width: 210mm; height: 297mm; background: var(--paper);
+      padding: 6mm 6.5mm 5.5mm; box-shadow: 0 8px 28px rgba(0,0,0,.32);
+    }
+    .sheet { height: 100%; display: flex; flex-direction: column; gap: 2.2mm; border: 0.65pt solid #111; padding: 2.3mm; }
+
+    .top {
+      display: grid; grid-template-columns: 1.18fr 0.82fr; gap: 2.3mm;
+      height: 92mm; flex: 0 0 92mm;
+    }
+
+    .header {
+      background: #fff url("assets/header-border.png") center / 100% 100% no-repeat;
+      padding: 9.5mm 9mm 7.5mm;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+    }
+    .head-row {
+      width: 100%; display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 3mm; margin-bottom: 2.2mm;
+    }
+    .qr { width: 16mm; height: 16mm; object-fit: contain; image-rendering: pixelated; background: #fff; border: 0.4pt solid #111; }
+    .ref-block { text-align: right; padding-top: 0.8mm; }
+    .ref-block .lab { font-size: 7.6pt; font-weight: 600; color: #111; }
+    .serial {
+      display: block; margin-top: 0.8mm;
+      color: var(--stamp); font-family: "Times New Roman", Times, serif;
+      font-weight: 700; font-size: 14pt; letter-spacing: 0.6px;
+    }
+    .title {
+      font-family: "Libre Baskerville", "Times New Roman", Times, serif;
+      font-weight: 700; font-size: 16.5pt; color: var(--maroon);
+      letter-spacing: 0.6px; line-height: 1; margin-bottom: 1.8mm;
+    }
+    .logo { width: 34mm; height: 34mm; object-fit: contain; margin: 0.4mm 0 1.2mm; }
+    .assoc {
+      font-family: "Libre Baskerville", "Times New Roman", Times, serif;
+      font-weight: 700; font-size: 7.6pt; color: var(--maroon);
+      line-height: 1.22; margin-bottom: 1.5mm;
+    }
+    .contact { font-size: 6.1pt; line-height: 1.4; color: #111; }
+
+    .stack { display: grid; grid-template-rows: 1.16fr 1.16fr 0.84fr 0.84fr; gap: 2.1mm; }
+    .ibox {
+      border: 0.75pt solid #111; border-radius: 1.6mm;
+      overflow: hidden; display: flex; flex-direction: column; background: #fff;
+    }
+    .ibox h3 {
+      background: var(--grey); font-size: 6.5pt; font-weight: 600; color: #111;
+      text-align: center; padding: 1.25mm 1.6mm; border-bottom: 0.75pt solid #111; line-height: 1.15;
+    }
+    .ibox .val {
+      font-size: 10.4pt; font-weight: 700; text-transform: uppercase;
+      line-height: 1.28; padding: 2mm 2.2mm 1.8mm;
+    }
+
+    .goods-wrap {
+      flex: 1 1 auto;
+      min-height: 38mm;
+      display: flex;
+    }
+    .goods { width: 100%; height: 100%; border-collapse: collapse; table-layout: fixed; }
+    .goods th, .goods td { border: 0.75pt solid #111; vertical-align: top; }
+    .goods th {
+      background: var(--grey); font-size: 6.6pt; font-weight: 600;
+      text-align: center; padding: 1.4mm 1.4mm; height: 8.2mm;
+    }
+    .goods td {
+      height: 100%; padding: 2.2mm 2mm; font-size: 10pt;
+      font-weight: 700; text-transform: uppercase; line-height: 1.3;
+    }
+
+    .bottom {
+      flex: 0 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: 0.75pt solid #111;
+    }
+    .col {
+      padding: 2.2mm 2.6mm 2mm;
+      display: flex;
+      flex-direction: column;
+    }
+    .col-l { border-right: 0.75pt solid #111; }
+    .other {
+      border: 0.75pt solid #111; overflow: hidden;
+      height: 16mm; margin-bottom: 2.6mm;
+    }
+    .other h3 {
+      background: var(--grey); font-size: 6.6pt; font-weight: 600; text-align: center;
+      padding: 1.1mm 2mm; border-bottom: 0.75pt solid #111;
+    }
+    .other-body { height: calc(16mm - 6.5mm); padding: 1.2mm 2mm; font-size: 8pt; font-weight: 700; white-space: pre-wrap; }
+    .origin { font-size: 8pt; line-height: 1.35; margin-bottom: 2.6mm; }
+    .origin strong { font-size: 10pt; }
+
+    .sign {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 17mm;
+      gap: 2.6mm;
+      align-items: stretch;
+    }
+    .fields { min-width: 0; display: flex; flex-direction: column; }
+    .field {
+      display: grid;
+      grid-template-columns: 34mm 1fr;
+      align-items: end;
+      height: 6.6mm;
+      margin-bottom: 1.4mm;
+      font-size: 8pt;
+      column-gap: 1.5mm;
+    }
+    .field:last-child { margin-bottom: 0; }
+    .field .ln, .sig-ln, .body-ln {
+      border-bottom: 0.7pt solid #111;
+      min-height: 5.6mm;
+      display: flex;
+      align-items: flex-end;
+      font-weight: 700;
+      font-size: 9pt;
+      padding: 0 1.5mm 1px;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .blue {
+      color: var(--stamp);
+      font-family: "Courier New", Courier, monospace;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-transform: none !important;
+    }
+    .stamp-box {
+      border: 0.75pt solid #111;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 1.4mm;
+      font-size: 7pt;
+    }
+    .col-r { position: relative; }
+    .cert { font-size: 8pt; line-height: 1.4; margin-bottom: 3.2mm; }
+    .auth { font-size: 8pt; margin-bottom: 3.2mm; }
+    .auth .sig-ln { height: 8mm; margin-top: 0.8mm; }
+    .issue { font-size: 8pt; margin-bottom: 3.2mm; }
+    .issue .blue { margin-left: 2mm; font-size: 11pt; letter-spacing: 0.7px; }
+    .foot-name {
+      text-align: center; font-weight: 700; font-size: 7.1pt;
+      line-height: 1.25; padding: 1mm 1mm 2.2mm;
+      position: relative; z-index: 2;
+    }
+    .cbody {
+      font-size: 8pt; display: grid; grid-template-columns: 27mm 1fr;
+      align-items: end; position: relative; z-index: 2; margin-top: auto;
+    }
+    .official {
+      position: absolute; right: 2mm; bottom: 11mm; width: 36mm;
+      opacity: 0.9; mix-blend-mode: multiply; transform: rotate(-7deg);
+      filter: contrast(1.2) saturate(1.15);
+      pointer-events: none; z-index: 1;
+    }
+
+    @media print {
+      html, body { background: #fff !important; margin: 0; padding: 0; }
+      .toolbar, .editor { display: none !important; }
+      .sheet-wrap { display: block !important; padding: 0 !important; }
+      .page { box-shadow: none !important; margin: 0; }
+      @page { size: A4 portrait; margin: 0; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <span id="toolbarTitle">Certificate of Origin No. 0006638</span>
+    <button type="button" class="ghost" onclick="toggleEditor()">Edit details</button>
+    <button type="button" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <form class="editor" id="editor" autocomplete="off">
+    <h2>Your details</h2>
+    <p class="hint">Type here. The certificate below updates immediately.</p>
+    <div class="editor-grid">
+      <label>Certificate No.<input name="serial" value="0006638" /></label>
+      <label>Reference Number<input name="reference" value="" /></label>
+      <label>Exporter name<input name="exporterName" value="MOBIN AND COMPANY" /></label>
+      <label>Exporter country<input name="exporterCountry" value="PAKISTAN" /></label>
+      <label class="wide">Consignee / Importer<input name="consignee" value="QADOOS AFGHANISTAN" /></label>
+      <label>Membership number<input name="membership" value="" /></label>
+      <label>Transport details<input name="transport" value="" /></label>
+      <label>Marks and numbers<input name="marks" value="637 UNDLES & CTNS" /></label>
+      <label>Packages<input name="packages" value="637 BUNDLES & CTNS" /></label>
+      <label class="wide">Description of goods<input name="description" value="MIX GOODS AS PER INVOICE & PACKING LIS" /></label>
+      <label>Gross weight<input name="weight" value="25000,kgs" /></label>
+      <label>Country of origin<input name="origin" value="PAKISTAN" /></label>
+      <label class="wide">Other information<textarea name="other"></textarea></label>
+      <label>Signatory name<input name="signName" value="" /></label>
+      <label>Designation<input name="designation" value="MOBIN AND COMPANY" /></label>
+      <label>Company<input name="company" value="PASHAWAR" /></label>
+      <label>Place<input name="place" value="PASHAWAR" /></label>
+      <label>Exporter date<input name="exporterDate" value="30/06/2026" /></label>
+      <label>Date of issue<input name="issueDate" value="03 JUL 2026" /></label>
+    </div>
+  </form>
+
+  <div class="sheet-wrap">
+    <article class="page">
+      <div class="sheet">
+        <section class="top">
+          <div class="header">
+            <div class="head-row">
+              <img class="qr" src="assets/qr.png" alt="QR code" />
+              <div class="ref-block">
+                <span class="lab">Reference Number:</span>
+                <span class="serial" id="outSerial">№ 0006638</span>
+              </div>
+            </div>
+            <h1 class="title">CERTIFICATE OF ORIGIN</h1>
+              <img class="logo" src="assets/apdiea-monogram.png" alt="APDIEA monogram" />
+            <div class="assoc">ALL PAKISTAN DRY FRUIT IMPORTERS &amp; EXPORTERS ASSOCIATION</div>
+            <div class="contact">
+              Office No. 2, 2nd Floor, National Plaza, Choharmal Road, Corner Jinnah Road, Quetta – Pakistan<br />
+              Ph: +91-81-2838476 / E-mail: info@apdiea.org.pk<br />
+              URL: www.apdiea.org.pk
+            </div>
+          </div>
+
+          <div class="stack">
+            <div class="ibox">
+              <h3>Exporter (Name, Address and Country)</h3>
+              <div class="val" id="outExporter">MOBIN AND COMPANY<br />PAKISTAN</div>
+            </div>
+            <div class="ibox">
+              <h3>Consignee Importer (Name, Address and Country)</h3>
+              <div class="val" id="outConsignee">QADOOS AFGHANISTAN</div>
+            </div>
+            <div class="ibox">
+              <h3>Exporter Member Ship Number</h3>
+              <div class="val" id="outMembership"></div>
+            </div>
+            <div class="ibox">
+              <h3>Particulars of Transport (as for as know)</h3>
+              <div class="val" id="outTransport"></div>
+            </div>
+          </div>
+        </section>
+
+        <div class="goods-wrap">
+        <table class="goods">
+          <colgroup>
+            <col style="width:18%" />
+            <col style="width:22%" />
+            <col style="width:32%" />
+            <col style="width:20%" />
+            <col style="width:8%" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Marks and Numbers</th>
+              <th>Number and Kind of Packages</th>
+              <th>Description of Goods</th>
+              <th>Gross Weight or Other Quality</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="outMarks">637 UNDLES &amp; CTNS</td>
+              <td id="outPackages">637 BUNDLES &amp; CTNS</td>
+              <td id="outDescription">MIX GOODS AS PER INVOICE &amp; PACKING LIS</td>
+              <td id="outWeight">25000,kgs</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <section class="bottom">
+          <div class="col col-l">
+            <div class="other">
+              <h3>Other Information</h3>
+              <div class="other-body" id="outOther"></div>
+            </div>
+            <p class="origin">
+              It is hereby declared that above mentioned goods originate in:
+              <strong id="outOrigin">PAKISTAN</strong>
+            </p>
+            <div class="sign">
+              <div class="fields">
+                <div class="field"><span>Exporter's Signature:</span><span class="ln"></span></div>
+                <div class="field"><span>Name:</span><span class="ln" id="outSignName"></span></div>
+                <div class="field"><span>Designation:</span><span class="ln" id="outDesignation">MOBIN AND COMPANY</span></div>
+                <div class="field"><span>Company:</span><span class="ln" id="outCompany">PASHAWAR</span></div>
+                <div class="field"><span>Place:</span><span class="ln" id="outPlace">PASHAWAR</span></div>
+                <div class="field"><span>Date:</span><span class="ln blue" id="outExporterDate">30/06/2026</span></div>
+              </div>
+              <div class="stamp-box">Stamp</div>
+            </div>
+          </div>
+
+          <div class="col col-r">
+            <p class="cert">
+              It is hereby certified that to the best of my knowledge and according to the documents produced before me the declaration appears to be correct.
+            </p>
+            <div class="auth">
+              Authorized Signatory:
+              <div class="sig-ln"></div>
+            </div>
+            <div class="issue">
+              Place and date of issue:
+              <span class="blue" id="outIssueDate">03 JUL 2026</span>
+            </div>
+            <div class="foot-name">ALL PAKISTAN DRY FRUIT IMPORTERS &amp; EXPORTERS ASSOCIATION</div>
+            <div class="cbody"><span>Certifying Body:</span><span class="body-ln"></span></div>
+            <img class="official" src="assets/apdiea-stamp.png" alt="Secretary General attested stamp" />
+          </div>
+        </section>
+      </div>
+    </article>
+  </div>
+
+  <script>
+    const form = document.getElementById("editor");
+    const KEY = "coo-same-v2";
+    function setText(id, value) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value || "";
+    }
+    function apply() {
+      const d = Object.fromEntries(new FormData(form).entries());
+      const serial = (d.serial || "").replace(/^№\s*/i, "").trim();
+      setText("outSerial", serial ? "№ " + serial : "");
+      document.getElementById("outExporter").innerHTML =
+        [d.exporterName, d.exporterCountry].filter(Boolean).join("<br>");
+      setText("outConsignee", d.consignee);
+      setText("outMembership", d.membership);
+      setText("outTransport", d.transport);
+      setText("outMarks", d.marks);
+      setText("outPackages", d.packages);
+      setText("outDescription", d.description);
+      setText("outWeight", d.weight);
+      setText("outOther", d.other);
+      setText("outOrigin", d.origin);
+      setText("outSignName", d.signName);
+      setText("outDesignation", d.designation);
+      setText("outCompany", d.company);
+      setText("outPlace", d.place);
+      setText("outExporterDate", d.exporterDate);
+      setText("outIssueDate", d.issueDate);
+      document.getElementById("toolbarTitle").textContent =
+        "Certificate of Origin" + (serial ? " No. " + serial : "");
+      localStorage.setItem(KEY, JSON.stringify(d));
+    }
+    function toggleEditor() {
+      form.style.display = form.style.display === "block" ? "none" : "block";
+    }
+    const saved = localStorage.getItem(KEY);
+    if (saved) {
+      try {
+        const d = JSON.parse(saved);
+        for (const [name, value] of Object.entries(d)) {
+          const input = form.elements[name];
+          if (input) input.value = value;
+        }
+      } catch (e) {}
+    }
+    form.addEventListener("input", apply);
+    apply();
+  </script>
+</body>
+</html>
