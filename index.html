@@ -244,11 +244,12 @@
       align-items: end; position: relative; z-index: 2; margin-top: auto;
     }
     .official {
-      position: absolute; right: 2mm; bottom: 11mm; width: 40mm;
+      position: absolute; right: 1mm; bottom: 10mm; width: 42mm;
       height: auto;
       opacity: 1;
-      transform: rotate(-7deg);
       pointer-events: none; z-index: 1;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
     }
 
     @media print {
@@ -262,7 +263,7 @@
         filter: none !important;
         mix-blend-mode: normal !important;
         opacity: 1 !important;
-        image-rendering: auto;
+        transform: none !important;
       }
     }
   </style>
@@ -425,7 +426,7 @@
             </div>
             <div class="foot-name">ALL PAKISTAN DRY FRUIT IMPORTERS &amp; EXPORTERS ASSOCIATION</div>
             <div class="cbody"><span>Certifying Body:</span><span class="body-ln"></span></div>
-            <img class="official" src="assets/apdiea-stamp.png" alt="Secretary General attested stamp" />
+            <img class="official" src="assets/apdiea-stamp.png?v=3" alt="Secretary General attested stamp" />
           </div>
         </section>
       </div>
